@@ -1,7 +1,7 @@
 interfaces {
     ethernet eth0 {
         address "172.20.20.21/24"
-        address "3fff:172:20:20::3/64"
+        address "3fff:172:20:20::a/64"
         description "Management Interface"
     }
     ethernet eth1 {
@@ -12,7 +12,6 @@ interfaces {
     }
     ethernet eth3 {
         address "172.16.100.2/24"
-        address "fd01:100:11::2/64"
         description "CE01"
         vrf "customer-1"
     }
@@ -202,31 +201,8 @@ vrf {
                             }
                         }
                     }
-                    ipv6-unicast {
-                        export {
-                            vpn
-                        }
-                        import {
-                            vpn
-                        }
-                        rd {
-                            vpn {
-                                export "10.0.0.1:100"
-                            }
-                        }
-                        redistribute {
-                            connected {
-                            }
-                        }
-                        route-target {
-                            vpn {
-                                export "65550:100"
-                                import "65550:100"
-                            }
-                        }
-                    }
                 }
-                neighbor fd01:100:11::1 {
+                neighbor 172.16.100.1 {
                     peer-group "CE"
                 }
                 parameters {
@@ -235,8 +211,6 @@ vrf {
                 peer-group CE {
                     address-family {
                         ipv4-unicast {
-                        }
-                        ipv6-unicast {
                         }
                     }
                     remote-as "external"

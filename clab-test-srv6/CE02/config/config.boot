@@ -1,13 +1,15 @@
 interfaces {
     ethernet eth0 {
         address "172.20.20.32/24"
-        address "3fff:172:20:20::5/64"
+        address "3fff:172:20:20::6/64"
         description "Management Interface"
     }
     ethernet eth1 {
         address "172.16.200.1/24"
-        address "fd01:100:2a::1/64"
         description "Link to PE02"
+    }
+    ethernet eth2 {
+        address "192.168.2.1/24"
     }
     loopback lo {
     }
@@ -27,15 +29,13 @@ protocols {
     bgp {
         address-family {
             ipv4-unicast {
-            }
-            ipv6-unicast {
+                network 192.168.2.0/24 {
+                }
             }
         }
-        neighbor fd01:100:2a::2 {
+        neighbor 172.16.200.2 {
             address-family {
                 ipv4-unicast {
-                }
-                ipv6-unicast {
                 }
             }
             remote-as "external"

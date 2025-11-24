@@ -1,7 +1,7 @@
 interfaces {
     ethernet eth0 {
         address "172.20.20.13/24"
-        address "3fff:172:20:20::a/64"
+        address "3fff:172:20:20::3/64"
         description "Management Interface"
     }
     ethernet eth1 {
