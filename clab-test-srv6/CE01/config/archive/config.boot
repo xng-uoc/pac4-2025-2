@@ -1,0 +1,106 @@
+interfaces {
+    ethernet eth0 {
+        address "172.20.20.31/24"
+        address "3fff:172:20:20::6/64"
+        description "Management Interface"
+    }
+    ethernet eth1 {
+        address "172.16.100.1/24"
+        address "fd01:100:11::1/64"
+        description "Link to PE01"
+    }
+    loopback lo {
+    }
+}
+pki {
+    ca clab {
+        certificate "MIIDhzCCAm+gAwIBAgICB+MwDQYJKoZIhvcNAQELBQAwVTELMAkGA1UEBhMCVVMxCTAHBgNVBAcTADEVMBMGA1UEChMMY29udGFpbmVybGFiMQkwBwYDVQQLEwAxGTAXBgNVBAMTEHRlc3Qtc3J2NiBsYWIgQ0EwHhcNMjUxMTI0MTMwODE5WhcNMjYxMTI0MTMwODE5WjBVMQswCQYDVQQGEwJVUzEJMAcGA1UEBxMAMRUwEwYDVQQKEwxjb250YWluZXJsYWIxCTAHBgNVBAsTADEZMBcGA1UEAxMQdGVzdC1zcnY2IGxhYiBDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANAQffWys00YehPMQQCT0srIFdeoSnIyMFFbSPf6qQtrKpcfRv8D3n5+3ZHwlobTqJkakQGe4w2ffcSnZkLZJSrhUKnc8yM9/5OiYRKwJZCOf4hH4KXzQooyE7mxNshRAkm3BMe9FZE5hor765WxROzQhv4r3Gs+80bFUbD19qzbyeW5kiTYTfDI8WBORK18eQAGW+zOu9a1y6OjhNO5JcLvEAjNgQezYimynneS/l81UMEydKVg0jhT4My22FSr3SiDjUyFo6ows2t3UeqgHWPW51c+3/UZomuSKG09ylDciEi0AuHCQ7rqgn2ZC5kUZUWlEMn4AncwHXe+864MyVkCAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKEMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTH1kcCQkfatkihc5IyESfZPo7DCjANBgkqhkiG9w0BAQsFAAOCAQEAZa02+feTpzEPMoJdZs/zqqnYT4FvUgFef9OPSKX9l82JmKx/3vnuxoWaH1IjkoWmy9qMlkGlSyHIYZYBEvjkjbDTU623OP85F+3u8AURKOVP76q4nRgOyiSACUXORL6OaHsI5I23RVu2NU2zAUMWXPFZSJKz0HqFoN+JeuVhjq3Nw4wIcTl/+unsps3f6tNACZsrrsPYMF2NBB4J40YGaivlogKKTcz728kHGhehxbk8bS6kbo26ZnhRD2bTpTnVGJcXkcPSyKaCixZ7n2Z9GyrsS7hHwJwD2diNIrNS6A5YRdBHPuTKos0twzmkAhTjxQMMQqIOmHmzlZ5B1oHr+Q=="
+    }
+    certificate self {
+        certificate "MIIDyjCCArKgAwIBAgICBnowDQYJKoZIhvcNAQELBQAwVTELMAkGA1UEBhMCVVMxCTAHBgNVBAcTADEVMBMGA1UEChMMY29udGFpbmVybGFiMQkwBwYDVQQLEwAxGTAXBgNVBAMTEHRlc3Qtc3J2NiBsYWIgQ0EwHhcNMjUxMTI0MTMwODIwWhcNMjYxMTI0MTMwODIwWjBWMQswCQYDVQQGEwJVUzEJMAcGA1UEBxMAMRUwEwYDVQQKEwxjb250YWluZXJsYWIxCTAHBgNVBAsTADEaMBgGA1UEAxMRQ0UwMS50ZXN0LXNydjYuaW8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0g3XMDBsh1aJH80/14JIjyEffVgZsVWFrTzY0qChXBCowTc4KO/isdfdZNOGCfGWP/PvIG+Y+PKyRaCTI2vUA6KpM/VUnqowfmkvmfpyz+sGWkNO3BxkHhBig+DwcDgM4l07O6Zm8U8tvnQ3QBkvljdRo8F608bjOsV2ywmBkrA9jIiQq8NUgPLWQKc+cOhKCrUJ+v7lj/RuvC62mmcBl5OQWJgER9da77Gqm77WSIe0LnNc+uchARbHjPc/Dds7mfq7Ibti/HkYXWztcXE4U74ACRJkS2IJ/Vm89OP8JarMq1oPDUhp9wEMHIvxLsR2ovokzW0X8wF01jEFMYyLDAgMBAAGjgaIwgZ8wDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNVHQ4EBwQFAQIDBAYwHwYDVR0jBBgwFoAUx9ZHAkJH2rZIoXOSMhEn2T6OwwowPQYDVR0RBDYwNIIEQ0UwMYITY2xhYi10ZXN0LXNydjYtQ0UwMYIRQ0UwMS50ZXN0LXNydjYuaW+HBKwUFB8wDQYJKoZIhvcNAQELBQADggEBAAr/xyCq5Nz98htMA7z4/NOc6t108oUjnKW6UMDIdjDRXgWsuKcND9BrL7B5DIxKlVKgsXiy7ydBxwo6nwYEMhMh1vbR1XyRS0r+q6SlDl8c6REqLJUqsPyEnEh9I8UDIpptBOWoDG/UrdYccZ/zipRJjYzikARuJgrtLF8frGca/IMitTZJmWmnCv+k2bxCO1cqt3N5Wgy9IKbcQNErEcvuZgOZ9sXdEtxOt6aG6iKbY1DqBmGeYLg5080FvaqXPfI5erjzCCEjUxKBoPSZXThXm0spAiUiWC+SxSyhXsfOdNN7NFCTuPgkTAoIEmrZUf00R8ORMido3qLcWYTQE5s="
+        private {
+            key "MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC0g3XMDBsh1aJH80/14JIjyEffVgZsVWFrTzY0qChXBCowTc4KO/isdfdZNOGCfGWP/PvIG+Y+PKyRaCTI2vUA6KpM/VUnqowfmkvmfpyz+sGWkNO3BxkHhBig+DwcDgM4l07O6Zm8U8tvnQ3QBkvljdRo8F608bjOsV2ywmBkrA9jIiQq8NUgPLWQKc+cOhKCrUJ+v7lj/RuvC62mmcBl5OQWJgER9da77Gqm77WSIe0LnNc+uchARbHjPc/Dds7mfq7Ibti/HkYXWztcXE4U74ACRJkS2IJ/Vm89OP8JarMq1oPDUhp9wEMHIvxLsR2ovokzW0X8wF01jEFMYyLDAgMBAAECgf9iyY7HaQvWkfnwzLdCi1cIcUYXQBZ2/9xqKm9mLqCxyxWx80johBysq3v+1dgtqn/qZm79x3of+64Osjyie/4ymrtlM6UZw1WFj56Tn1BV+5gpThj1kTmhY1x9iCj2yxrE9zx2mZQIyWxyW82zV1hk+1L2gWIf11yY9ETS3CbkifKRNaEsIObupnORnJ1hsm0Rucmg89sTXxZ6R/P4PZZIViEFTyLh0VYb8icvXODvAmBgBPq7JN6w5g7LgTd9eviN5qn6f1rL85q3y7pIdvdCICNAxna5eqXHFNoIeONAu46OWAgLL+8oyo3ZxJYL8yLASSZxesgRLUlbkMHv4kECgYEA6b2dCKWpneOnVYFkpGwTLm3RW16VLfeWCjzBYlnpWpX+t+Jqe0KVIos4Gd3JBOoJ81+B2LZshM6q6eoJ52Z9oyFQRSVvj+2HObRuC+ISCWZ/h+dSNX+VinR4d57Y1UkATEQIoTJ72CUebeM5hXr+hjgW9Ex9XKDL7Zf94lTzYwMCgYEAxbQ3dFvgNGJ+vzk63+qxv8fWImmMg7KFGiCrFU1ugzBV+vGy1JTOfSPyJWxMCF81MW63fcz21QNLkkN1TWuYwy/x5ZAQZm5bqQnwNV0RWdXsDD6OCpZ47JwU6hH/dnNzVnoUn4ceSzb2xqDbU7R9/5e4BlJwOvPga7cK9nE9VUECgYEA6Ha/Jel0ruXJ910v1eLylLt9euyvWz8ght/zyLf5QDFrWkChfCM1JVzml7sfAHcvHFABWKHdfZv5GZi87tnc3A/2wD5CHRez5G0RAVp+a8D31xb1iOVxuXiqkvV1W3I2DKOhHYiS6N3JzKou/BTd7Gj+U0t7ZlM5XfxK8P1h7jcCgYBrhf8e9pTyiJr8byi4/VCcyBeK8bKtMZs4QYoqdMlk6hXo/CjRevjukG0yszqK1xT8BIYhEicwZLFmI/AZIiqcBWhe/MIeo2iQf8o3i51TKYhOhHsGAR5VOPIa95zjlBincI/kzzzHlWYTUwrV9HUOXDqGnbFSLq7ghlWdAKtlwQKBgQDnCpwSLkFthFKoa6PMIwWiBrODRMgHcMJ2WA/MBrncEADFvbiRq7aRI5aCuOcL4YKZZz0DgT+mwj1DyzBEGNmz9hHqMNcHoXqzWuXPK7H40+YsAvVOZg1F2egMWSVhDyY8PN/CAcNryyJbdJaZ1oXNaBw0xrUxyWkDHtRG6atvog=="
+        }
+    }
+}
+protocols {
+    bgp {
+        address-family {
+            ipv4-unicast {
+            }
+            ipv6-unicast {
+            }
+        }
+        neighbor fd01:100:11::2 {
+            address-family {
+                ipv4-unicast {
+                }
+                ipv6-unicast {
+                }
+            }
+            remote-as "external"
+        }
+        system-as "65001"
+    }
+}
+service {
+    https {
+        api {
+            keys {
+                id admin {
+                    key "admin"
+                }
+            }
+            rest {
+            }
+        }
+        certificates {
+            ca-certificate "clab"
+            certificate "self"
+        }
+        listen-address "0.0.0.0"
+    }
+    ntp {
+        allow-client {
+            address "127.0.0.0/8"
+            address "169.254.0.0/16"
+            address "10.0.0.0/8"
+            address "172.16.0.0/12"
+            address "192.168.0.0/16"
+            address "::1/128"
+            address "fe80::/10"
+            address "fc00::/7"
+        }
+        server time1.vyos.net {
+        }
+        server time2.vyos.net {
+        }
+        server time3.vyos.net {
+        }
+    }
+    ssh {
+        listen-address "0.0.0.0"
+    }
+}
+system {
+    config-management {
+        commit-revisions "100"
+    }
+    host-name "CE01"
+    login {
+        user admin {
+            authentication {
+                encrypted-password "$6$rounds=656000$w8nykuJkfEJuG691$xVl/ljVdQvvTFyxLZKbw.PrK4/F7h56RMsR18EKXkhgxTEtQ7xE1YysJHKn.mnGXT2u5xoa/AsRKR2RhG3qiD/"
+                public-keys clab {
+                    key "AAAAB3NzaC1yc2EAAAADAQABAAABgQCrNNRvXqLqgzLt/RnlXU5HGKIjhQWlW5hr0OCJz8zMR9TeraWe+pOehLlzhJQ4Nd9SF/7mekT2jQitbv47Nrb9p2FRAnoxRVWuGXc+tPsa8tlZnV9cVZ7EBaxRU27xBmU0bfLI8u08/atsCsri30nPoZj0MvGMLHDnp++FA+3NM/3WNOdv+eJ06H0KNmW8swq/tzkWbX+OmxCG3FDs9l0Q1mcMVePHwCy1AwClkcd3bOpIcvQ6h49wBlTwoKK8tmcbuT62wkN2AWEcYwTHgul1P0JTtUbYylX+q5lBqMcZm0YWJMY2idyGHLyOCPNaV+YdiegvnIqyKLfiUEQ3nyUQK9KpiNQs2xFZ5TUg26wzZpvAyzRpLYlycw3L6Rc82fKxO60ZgZsmvtzYEga8Cp+KMMdOhbzBxn5rRy1pTp7CgVFLldEL9i2HBzaJEqwbsC5DdjzxoU0wYUq/jvBfGY8wutQHp2txCaMGUOA/GEYPUuzKQRFj5JgKwYkMxZ0oock="
+                    type "ssh-rsa"
+                }
+            }
+        }
+    }
+}
+
+
+// Warning: Do not remove the following line.
+// vyos-config-version: "bgp@6:broadcast-relay@1:cluster@2:config-management@1:conntrack@6:conntrack-sync@2:container@3:dhcp-relay@2:dhcp-server@11:dhcpv6-server@6:dns-dynamic@4:dns-forwarding@4:firewall@19:flow-accounting@1:https@7:ids@1:interfaces@33:ipoe-server@4:ipsec@13:isis@3:l2tp@9:lldp@3:mdns@1:monitoring@2:nat@8:nat66@3:ntp@3:openconnect@3:openvpn@4:ospf@2:pim@1:policy@8:pppoe-server@11:pptp@5:qos@2:quagga@11:reverse-proxy@3:rip@1:rpki@2:salt@1:snmp@3:ssh@2:sstp@6:system@29:vrf@3:vrrp@4:vyos-accel-ppp@2:wanloadbalance@4:webproxy@2"
+// Release version: 1.5-stream-2025-Q2
