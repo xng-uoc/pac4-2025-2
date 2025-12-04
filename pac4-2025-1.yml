@@ -1,0 +1,91 @@
+name: pac4-2025-1
+topology:
+  nodes:
+    P01:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.11
+      labels:
+        graph-icon: router
+    P02:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.12
+      labels:
+        graph-icon: router
+    P03:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.13
+      labels:
+        graph-icon: router
+    P04:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.14
+      labels:
+        graph-icon: router
+    PE01:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.21
+      labels:
+        graph-icon: router
+    PE02:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.22
+      labels:
+        graph-icon: router
+    CE01:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.31
+      labels:
+        graph-icon: router
+    CE02:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.32
+      labels:
+        graph-icon: router
+    host01:
+      kind: linux
+      image: ghcr.io/peretuset/alpine:latest
+      mgmt-ipv4: 172.20.20.41
+      labels:
+        graph-icon: host
+    host02:
+      kind: linux
+      image: ghcr.io/peretuset/alpine:latest
+      mgmt-ipv4: 172.20.20.42
+      labels:
+        graph-icon: host
+    ssh:
+      kind: linux
+      image: netreplica/graphite
+      mgmt-ipv4: 172.20.20.100
+      env:
+        CLAB_SSH_CONNECTION: ${SSH_CONNECTION}
+      binds:
+        - __clabDir__/topology-data.json:/htdocs/default/default.json:ro
+        - __clabDir__/ansible-inventory.yml:/htdocs/lab/default/ansible-invento>
+      ports:
+        - 8080:80
+      exec:
+        - sh -c 'graphite_motd.sh 8080'
+      labels:
+        graph-hide: yes
+  links:
+    - endpoints: ["P01:eth1", "P02:eth1"]
+    - endpoints: ["P01:eth2", "P03:eth2"]
+    - endpoints: ["P01:eth3", "PE01:eth1"]
+    - endpoints: ["P02:eth2", "P04:eth2"]
+    - endpoints: ["P02:eth3", "PE02:eth1"]
+    - endpoints: ["P03:eth1", "P04:eth1"]
+    - endpoints: ["P03:eth3", "PE01:eth2"]
+    - endpoints: ["P04:eth3", "PE02:eth2"]
+    - endpoints: ["PE01:eth3", "CE01:eth1"]
+    - endpoints: ["PE02:eth3", "CE02:eth1"]
+    - endpoints: ["CE01:eth2", "host01:eth1"]
+    - endpoints: ["CE02:eth2", "host02:eth1"]
