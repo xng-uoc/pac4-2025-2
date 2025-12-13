@@ -3,49 +3,49 @@ topology:
   nodes:
     P01:
       kind: vyosnetworks_vyos
-      image: ghcr.io/peretuset/vyos:latest
+      image: ghcr.io/peretuset/vyos:rolling
       mgmt-ipv4: 172.20.20.11
       labels:
         graph-icon: router
     P02:
       kind: vyosnetworks_vyos
-      image: ghcr.io/peretuset/vyos:latest
+      image: ghcr.io/peretuset/vyos:rolling
       mgmt-ipv4: 172.20.20.12
       labels:
         graph-icon: router
     P03:
       kind: vyosnetworks_vyos
-      image: ghcr.io/peretuset/vyos:latest
+      image: ghcr.io/peretuset/vyos:rolling
       mgmt-ipv4: 172.20.20.13
       labels:
         graph-icon: router
     P04:
       kind: vyosnetworks_vyos
-      image: ghcr.io/peretuset/vyos:latest
+      image: ghcr.io/peretuset/vyos:rolling
       mgmt-ipv4: 172.20.20.14
       labels:
         graph-icon: router
     PE01:
       kind: vyosnetworks_vyos
-      image: ghcr.io/peretuset/vyos:latest
+      image: ghcr.io/peretuset/vyos:rolling
       mgmt-ipv4: 172.20.20.21
       labels:
         graph-icon: router
     PE02:
       kind: vyosnetworks_vyos
-      image: ghcr.io/peretuset/vyos:latest
+      image: ghcr.io/peretuset/vyos:rolling
       mgmt-ipv4: 172.20.20.22
       labels:
         graph-icon: router
     CE01:
       kind: vyosnetworks_vyos
-      image: ghcr.io/peretuset/vyos:latest
+      image: ghcr.io/peretuset/vyos:rolling
       mgmt-ipv4: 172.20.20.31
       labels:
         graph-icon: router
     CE02:
       kind: vyosnetworks_vyos
-      image: ghcr.io/peretuset/vyos:latest
+      image: ghcr.io/peretuset/vyos:rolling
       mgmt-ipv4: 172.20.20.32
       labels:
         graph-icon: router
