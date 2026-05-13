@@ -1,21 +1,42 @@
 interfaces {
     ethernet eth0 {
         address "172.20.20.11/24"
-        address "3fff:172:20:20::4/64"
+        address "3fff:172:20:20::b/64"
         description "Management Interface"
+    }
+    ethernet eth1 {
+        description "Link to P02"
+    }
+    ethernet eth2 {
+        description "Link to P03"
+    }
+    ethernet eth3 {
+        description "Link to PE01"
     }
     loopback lo {
     }
 }
 pki {
     ca clab {
-        certificate "MIIDizCCAnOgAwIBAgICB+MwDQYJKoZIhvcNAQELBQAwVzELMAkGA1UEBhMCVVMxCTAHBgNVBAcTADEVMBMGA1UEChMMY29udGFpbmVybGFiMQkwBwYDVQQLEwAxGzAZBgNVBAMTEnBhYzQtMjAyNS0yIGxhYiBDQTAeFw0yNjAyMTUxNjAyMzFaFw0yNzAyMTUxNjAyMzFaMFcxCzAJBgNVBAYTAlVTMQkwBwYDVQQHEwAxFTATBgNVBAoTDGNvbnRhaW5lcmxhYjEJMAcGA1UECxMAMRswGQYDVQQDExJwYWM0LTIwMjUtMiBsYWIgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDNb7QnPAdc+FG2kRshuMyEehmIuk2zY0vSbwv3Wd1M57DYm0VZn6VxGue5/MXkKzXqptQ4OmTj90JMzgMcMDC7ECvNwkCHsOqMtJszYqPnG21wmTvaVPdw5ZnO1F24keoKy8JARccoQ8piCX3gOJgCBJx5UDu1zRkLSTviFB1JFw3PdewWRqX5r/QIRY453uEQJfwh5pckIR3AnALz17Vd3EJ6Tzw1Zwa15wMBhAnMIu388MfTxS9WI6psvxHegUDv0Lo2cf95IGcOJcoSz4rFzOoVG8Qqm4ot/Df59vQ0wgdYqkY2Qn5XnvGzIYfZaeWtmnXdzPLmks5CrU5tun2RAgMBAAGjYTBfMA4GA1UdDwEB/wQEAwIChDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUuAHQ5MVNSKg3akumYIXfq7uk4dQwDQYJKoZIhvcNAQELBQADggEBACBBukDr0DGkAB5uUt8kXwpk4O++br5PMrKU3gefK4bVBbLzUck0KSZ3r6SsV09FTSDFTHDgxllLpps5/a0OjbmU+UtMbZOd2WAyywOTz/W9zZlxR/PaoDHTFDfSPDAM1+X+lovpbwnKNIG62clMLWcDEIJ0eJ8FfIRkmyx6vZBt09hIjvbQpiejETnQLWuDjCymt7pStQRI7WrLfg9bgA5/6ucWCVq6a6nHXEwDh917c8RBV43lsiYXuhu1+/fh5UXUjpTVJXdTo0iqdl9hgOspvxTy2B3MOMKuMCJdw77D0ZX+29e6xI4LqIU0CBUErnWQfL50/3dyZQK5XcVToe0="
+        certificate "MIIDhzCCAm+gAwIBAgICB+MwDQYJKoZIhvcNAQELBQAwVTELMAkGA1UEBhMCVVMxCTAHBgNVBAcTADEVMBMGA1UEChMMY29udGFpbmVybGFiMQkwBwYDVQQLEwAxGTAXBgNVBAMTEHRlc3Qtc3J2NiBsYWIgQ0EwHhcNMjUxMTI0MTMwODE5WhcNMjYxMTI0MTMwODE5WjBVMQswCQYDVQQGEwJVUzEJMAcGA1UEBxMAMRUwEwYDVQQKEwxjb250YWluZXJsYWIxCTAHBgNVBAsTADEZMBcGA1UEAxMQdGVzdC1zcnY2IGxhYiBDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANAQffWys00YehPMQQCT0srIFdeoSnIyMFFbSPf6qQtrKpcfRv8D3n5+3ZHwlobTqJkakQGe4w2ffcSnZkLZJSrhUKnc8yM9/5OiYRKwJZCOf4hH4KXzQooyE7mxNshRAkm3BMe9FZE5hor765WxROzQhv4r3Gs+80bFUbD19qzbyeW5kiTYTfDI8WBORK18eQAGW+zOu9a1y6OjhNO5JcLvEAjNgQezYimynneS/l81UMEydKVg0jhT4My22FSr3SiDjUyFo6ows2t3UeqgHWPW51c+3/UZomuSKG09ylDciEi0AuHCQ7rqgn2ZC5kUZUWlEMn4AncwHXe+864MyVkCAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKEMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTH1kcCQkfatkihc5IyESfZPo7DCjANBgkqhkiG9w0BAQsFAAOCAQEAZa02+feTpzEPMoJdZs/zqqnYT4FvUgFef9OPSKX9l82JmKx/3vnuxoWaH1IjkoWmy9qMlkGlSyHIYZYBEvjkjbDTU623OP85F+3u8AURKOVP76q4nRgOyiSACUXORL6OaHsI5I23RVu2NU2zAUMWXPFZSJKz0HqFoN+JeuVhjq3Nw4wIcTl/+unsps3f6tNACZsrrsPYMF2NBB4J40YGaivlogKKTcz728kHGhehxbk8bS6kbo26ZnhRD2bTpTnVGJcXkcPSyKaCixZ7n2Z9GyrsS7hHwJwD2diNIrNS6A5YRdBHPuTKos0twzmkAhTjxQMMQqIOmHmzlZ5B1oHr+Q=="
     }
     certificate self {
-        certificate "MIIDzjCCAragAwIBAgICBnowDQYJKoZIhvcNAQELBQAwVzELMAkGA1UEBhMCVVMxCTAHBgNVBAcTADEVMBMGA1UEChMMY29udGFpbmVybGFiMQkwBwYDVQQLEwAxGzAZBgNVBAMTEnBhYzQtMjAyNS0yIGxhYiBDQTAeFw0yNjAyMTUxNjAyNThaFw0yNzAyMTUxNjAyNThaMFcxCzAJBgNVBAYTAlVTMQkwBwYDVQQHEwAxFTATBgNVBAoTDGNvbnRhaW5lcmxhYjEJMAcGA1UECxMAMRswGQYDVQQDExJQMDEucGFjNC0yMDI1LTIuaW8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDPFaxMsKk+yyTfxTJQvICmjtrCMoaqLLzsVyP/pnfcfILniXIqSMvfODTLL9HA/xDe/q2NX5aQaWwslh4vLknbPSliChyrq/u24Y0mmW2ud2+/fm236S4K0NVXyh+8eYeRmNIHqbl7TX6tGRSdI/DY8YAmxm2tMaRH/OIikmW70cJEGsxCKpYlnRHcnbHHwLHzh2YRx50E53CPh+4Iu1HSTANTSrB57t4WTxsrwxdvjEy2pWfdr1Xgp/U3v0olEpeFqOEbna+JnjolztcDltdpWQspUpGr/S2QhxCuf0Q0MPy9FksKeD+dSNc4xZTbLqLg5nGr3rM61xFO/yv/Z97ZAgMBAAGjgaMwgaAwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNVHQ4EBwQFAQIDBAYwHwYDVR0jBBgwFoAUuAHQ5MVNSKg3akumYIXfq7uk4dQwPgYDVR0RBDcwNYIDUDAxghRjbGFiLXBhYzQtMjAyNS0yLVAwMYISUDAxLnBhYzQtMjAyNS0yLmlvhwSsFBQLMA0GCSqGSIb3DQEBCwUAA4IBAQCANQsVSekxTS09e6M3TnH2f0Nojh/bClHqJsbjiPX35gmnEGBvctsCR0ZN8/WW93q/m8IIHZw5UvoLehLhamSQ7dHopzEH/JldVdUak5lTWWeXntXXPuWOh1p1P9+rJ2oS9W97w05DzHygwoxv0HLjKV7qnd1COLDDOhhIrYVhbDIJZtkSRBnDN/wm5055BMuB35FWCyuKek6Ioe1JYgVsMY4xNANBacH3b1n2TfVq7AtBEU3Cqz8o8DveUZP8Pt44yO8/ocCeKMUpIAM1geXpz0Bqd8cvwpVwboYGcwQYsnvDnSAglZJb0/ugX8FBsXNkWeZ5yWo8E6Uwsu9uQA5G"
+        certificate "MIIDxjCCAq6gAwIBAgICBnowDQYJKoZIhvcNAQELBQAwVTELMAkGA1UEBhMCVVMxCTAHBgNVBAcTADEVMBMGA1UEChMMY29udGFpbmVybGFiMQkwBwYDVQQLEwAxGTAXBgNVBAMTEHRlc3Qtc3J2NiBsYWIgQ0EwHhcNMjUxMTI0MTMwODI2WhcNMjYxMTI0MTMwODI2WjBVMQswCQYDVQQGEwJVUzEJMAcGA1UEBxMAMRUwEwYDVQQKEwxjb250YWluZXJsYWIxCTAHBgNVBAsTADEZMBcGA1UEAxMQUDAxLnRlc3Qtc3J2Ni5pbzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK/Pam26EAX1O7Ag4oeGEumVTABGf3W0H4q5S822GgMNNN6e1L7WQo1MNC5YIzc7MXUY65Dsfq3bIkK8aWG3OchQEDNDx/PkpoLMYSHvS0auE+K3QL/fNJwxMXXFjz16tJzmeUCiyzk5+EmZk099Plt1ezE3yyUV918oLdu3HGTz0ywS1mJmuxCseF1+LzdELTss+ZZVRMQ/6ZHgusnRDTuj1XB2gGT7sAue16FaDf+b4D/CgZPKAxuJAfAkEWvob3cnOr81eYutxXoo5ZETQi4IIRlbCx7Yvga37TNsvsitcm7IA/WnS3Wx+pYXXdE9zf8wJVqseLPpcRJEkr/HYEECAwEAAaOBnzCBnDAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA4GA1UdDgQHBAUBAgMEBjAfBgNVHSMEGDAWgBTH1kcCQkfatkihc5IyESfZPo7DCjA6BgNVHREEMzAxggNQMDGCEmNsYWItdGVzdC1zcnY2LVAwMYIQUDAxLnRlc3Qtc3J2Ni5pb4cErBQUCzANBgkqhkiG9w0BAQsFAAOCAQEABUa4+6lwdoJhNCJ35G8aJ2MchDos7Vtd12lVEFyO9MTxzBHXIensmqjJJYLLWO+xQqS4Zq+NhssEjry9OACo2Qz8ZxnqpXciJRRFtRwe2tlFvZq/OtKrnQPK4KJtAAgT78mYxX8aGDamM1PwJ7/deWT5/klXgZ6UDKC6E/+byd+Sg9WMT1E5uPdqCC65fWbssBW4T0IUUeac28o4QMMd0sMxtAMUproqPXVV4Yy/l8nS4rq0jeNjW0//Yw09LCH7z4Cf2Vmx8bZ1oA4AT0Nw+GeHL7loiTmZ3OJdKawHWiaW4gaJBh1w5t00hGOYLg4+GarEtwjaRtai42zwz2ECtw=="
         private {
-            key "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPFaxMsKk+yyTfxTJQvICmjtrCMoaqLLzsVyP/pnfcfILniXIqSMvfODTLL9HA/xDe/q2NX5aQaWwslh4vLknbPSliChyrq/u24Y0mmW2ud2+/fm236S4K0NVXyh+8eYeRmNIHqbl7TX6tGRSdI/DY8YAmxm2tMaRH/OIikmW70cJEGsxCKpYlnRHcnbHHwLHzh2YRx50E53CPh+4Iu1HSTANTSrB57t4WTxsrwxdvjEy2pWfdr1Xgp/U3v0olEpeFqOEbna+JnjolztcDltdpWQspUpGr/S2QhxCuf0Q0MPy9FksKeD+dSNc4xZTbLqLg5nGr3rM61xFO/yv/Z97ZAgMBAAECggEAEgDG2WX0WL6tZnzMyoMQxioeL4rX9TxtcjiDKysMOZFjigCDedSZUL8gq9ds61PhYhmO+f7o5oYbvuaQGjbyecpf6iOJ6YzKldQXAteM1wGQJ/w0SqxNcehE29x5FNgV5pz8CWmCdAtBK4hGKAEjY6DfLL/MciWiLBX6jNngWUsTiNKOxXSiNbzfk9j/bylPP1NH0kd/nQPBvLZElv+rZjEjWK0E32G7ElbtK7ckVcmoU9NDFjnURa1sFeGdBFBQelG/IkUIpa1uKQyS+LOSBvZDPSfjFVRWgcEsVbVfsUcWngrrXv/pRHXMO6uuiw6d613yvEBzo5Ep9PpvExX4mQKBgQDkDYuUGkZSJRYGzXV7H7meyuSqC59FtlTJivAz0MB7+UiWZ1rZKlYKBsmx+j8pAvNra//+yKtW7kntfEUchgddWescNYrf6VAwIgZcshvhssB3inOo6BYSZ4TUfr0NHdpu2Qt+91MrFaSmaZF9ACROZY5m6J6VhBP0iZHhzQMapQKBgQDodlBVNCmQ1273y8F2vqPS/WMr7KqxjV8DpYnxNBTgxbxi4z+jWf59NDVL9XMf4AFdPLxUafabMos+EF4Ia702UrtvTXRW86wzjinBL6UHQfwGSmpYTJbjK7gSIrJQT0ybRk6JODk4Xm+RDhyyTHEF60DDPpSSFkBhtoOvoULhJQKBgQDRSVz+3d4LJN3CAGwAQm0mvSx8oY3ZfCrziv5Fjx4Wp/9liBRnl+K98NzI6M9t47dgrgyQ1bfoX2aY+6KxOo8nrI2Hpdt9AbEFezQ7fXj4+AKJshXSvKsE2Nud53G3x93ePHHAY1mAAKzJy7go7yhiifDVoEVpEXz+vgGTJ4HhwQKBgQDXdhIvZxG/tm6cLrc6oKinv0RUSiBMQYR3lM+uSV+wlpZt8cPiXF+NHP7pUK9MNAwPp2PHug9g+hAljnYZyAKwfy5Lk7bpgSFzB6mb7dVATOCT1BWNki+oj7Uk2hP8bAPNR/UzKnGe1akDAdmHSWLY4Zw9W5vJa+ZwqwKTnxymIQKBgA0aw2r5SsJTfp4SIGehHeOVQt7mtzXP2yV15kR95PEVbOHTpHFECp5uOW52JRzspPz8xZ9T3w33cjK1hwKkJdDpTxta8fmbzAf6BNXoDgUBnY2vexPjytXweJyvfNuwJPjKywiJdgfKclUv/OUljBsXCi/uEXnqIteNAMsVoilT"
+            key "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCvz2ptuhAF9TuwIOKHhhLplUwARn91tB+KuUvNthoDDTTentS+1kKNTDQuWCM3OzF1GOuQ7H6t2yJCvGlhtznIUBAzQ8fz5KaCzGEh70tGrhPit0C/3zScMTF1xY89erSc5nlAoss5OfhJmZNPfT5bdXsxN8slFfdfKC3btxxk89MsEtZiZrsQrHhdfi83RC07LPmWVUTEP+mR4LrJ0Q07o9VwdoBk+7ALntehWg3/m+A/woGTygMbiQHwJBFr6G93Jzq/NXmLrcV6KOWRE0IuCCEZWwse2L4Gt+0zbL7IrXJuyAP1p0t1sfqWF13RPc3/MCVarHiz6XESRJK/x2BBAgMBAAECggEADpxCcFCjHkD4BItnEp4oxN1RuJV4kt6KNIFw9EKAPOVZvG/J/FCwAoVlB2jvBvBWDDDVpXCR7Sl7L71FVgfftxmNjxprQTCCSfe+0WQihwLWcjk1GfzsUVf2j/QAExA3IZw2/WZ0qb0l42/uLGVFy7H4BT9paXE+4oXjRxFw5vlc9hUdcsEa8gJbuhKm6kkZQh70AcXOSYBtP9IlBlobGzKSmNYdmCNDpp4urjAwyyHwDngAts361xj9lTLt+j17bxXEoI6QiCeZZjGRaeFSPCbt9GBsOlFIdE8Ld7x3Hwvpfrj6NR5kiQZ0dh1sSl5GY1WUdLKaEfvhfyxEgk+1RQKBgQDl9Ny/fTf7Jq5EGc8WRhHEJZHjxf82lk8wHri4PXCy5I84TkLp3Y228KxLUI6eeX0m+2DHb8vynqBGcKbLwUGmD82R4+K6Ah2VlL5fedsHILTJi/7d9JVAGEKZVa/1QWh62GrXBp0KEHOKQuksOg5Rd3xdL8qAcf4uSuynawfk7wKBgQDDuLA2ZOXoTQQvo0HAM4zmLu5a1Cb8XbnBygxg+M8GqJnJPE1jgILOSkHQeES9CL3K19y2a7Al9xSqORGb2TYCBFmgSWXX5g+m347MTzbIpzWRVlDyA8pPdq8fL1L005I3Z56jzXdyUqF4HdIP8giUGPZNdUWVFShf+zs6+cztzwKBgGTyw12EuOiWKHZY5iIfDHmRDKRzLQBnp8e2FN08i5bc40qSgKlty2J98QT3DkTfjGNqgyfKGjweCrohhfd4lTszQMlEwylo+FfL/m6nbdGJOBQqUu5ZCpQikkoB5cbCuf0DuJNAofvjEPWnPfleWx7EV2IJMtqEMFNeLNmqEMMdAoGBAK1yGEa797p7tf/5b6VCidTbNkOryrjO3nVL9thg5iaCd3aMSBCrrD/gMp7qVhAnlPoTffbzS/D5G4kWdfJk9aWn8T1IjkZcDPbXGxcYA/ahp6kakzVGAp2VEfBS4fMxI1ySKVYEGZxoecuWsbeLx+pmjK9sA7PwQg18+Kp1ARSlAoGBAN3BtcCGE5SXz57AjkXt1y7X6aGyvpBhB9Ryfu2Qn2jXsmgzKTkTEOAqsqIdKJHFDiEMMu8RWS/RqDHQijcAsBfW2a+mnY893R71LXsNTFFPN3Xo/TKCbK3jmrt1g9Won/Djlkm1LaR4Pcb3CVBnixlYRV7sB9mDiTH589Nhgcu7"
         }
+    }
+}
+protocols {
+    isis {
+        interface eth1 {
+        }
+        interface eth2 {
+        }
+        interface eth3 {
+        }
+        level "level-2"
+        net "49.0000.0000.0000.0001.00"
     }
 }
 service {
@@ -65,21 +86,11 @@ system {
     login {
         user admin {
             authentication {
-                encrypted-password "$6$rounds=656000$NE2PTcaHd1YT3oTJ$Q/Aoa3IVwssCu8kuPOQQOAhHbmVNg3ylyKjo1NjtGZuYWxwMbIVUafUwQdj2xUjWXytm5zLUP5Ho0ODN7rfou1"
+                encrypted-password "$6$rounds=656000$C1qQp/ZerGlkbGw8$A/qA/lWm4JEGnF0aTFjEUVFgkZtmU.6OD.i0vHxWpzBH/UPfriUPt9rBkPHtxfTU4mQF2tTWayvtL2YcmGCxn/"
                 public-keys clab {
-                    key "AAAAB3NzaC1yc2EAAAADAQABAAABgQCrNNRvXqLqgzLt/RnlXU5HGKIjhQWlW5hr0OCJz8zMR9TeraWe+pOehLlzhJQ4Nd9SF/7mekT2jQitbv47Nrb9p2FRAnoxRVWuGXc+tPsa8tlZnV9cVZ7EBaxRU27xBmU0bfLI8u08/atsCsri30nPoZj0MvGMLHDnp++FA+3NM/3WNOdv+eJ06H0KNmW8swq/tzkWbX+OmxCG3FDs9l0Q1mcMVePHwCy1AwClkcd3bOpIcvQ6h49wBlTwoKK8tmcbuT62wkN2AWEcYwTHgul1P0JTtUbYylX+q5lBqMcZm0YWJMY2idyGHLyOCPNaV+YdiegvnIqyKLfiUEQ3nyUQK9KpiNQs2xFZ5TUg26wzZpvAyzRpLYlycw3L6Rc82fKxO60ZgZsmvtzYEga8Cp+KMMdOhbzBxn5rRy1pTp7CgVFLldEL9i2HBzaJEqwbsC5DdjzxoU0wYUq/jvBfGY8wutQHp2txCaMGUOA/GEYPUuzKQRFj5JgKwYkMxZ0oock="
+                    key "AAAAB3NzaC1yc2EAAAADAQABAAABgQCqnzaeMn5uFxEAkG917XwNy+xwwZlsUy86pLZzgXMyO7X3EVIyEv6/LbgR9mXYZOtzDJHPecVi5H+lSy2jFGwXaacGAhcjg3XQQevKoaBW2g45WI38Bjnxm8hACRo/5aoY80ResYIOdtvAoLiUOGe9x74lUsUVT7iv9DSuyMlVI6CeZkqzcMaAu7fKSfIvl40YmgW1lC3OKANGIT5LLL6310PfuBZsQHh2Ye/F2q3bOgL8NSJ/dp7Ml6mvLLwyCwqHlxATWB7V2vUHOokEKo15HOqC/maugeht486b1gEKrMpL1oZsBrEBAs5MkHfYGNqfmY07crI83F2VnF6N4/ez8eP8EJoBj/99rZMX6Ish04Bw8MmTfppBZKrhaVFGNq9e6YSgjd6mFNmZkX/GO89CSd9TCFMdqYJYyc+3YmnHRL4AWgO/er9Ja/K2X6R6Dw2lo4PXRWfyspN7HAhZkZV2c1Uaxx3MyOC1fmvzou7b3uBEEpb40lOijEGVL7q2780="
                     type "ssh-rsa"
                 }
-            }
-        }
-    }
-    syslog {
-        local {
-            facility all {
-                level "info"
-            }
-            facility local7 {
-                level "debug"
             }
         }
     }
@@ -87,5 +98,5 @@ system {
 
 
 // Warning: Do not remove the following line.
-// vyos-config-version: "bgp@6:broadcast-relay@1:cluster@2:config-management@1:conntrack@6:conntrack-sync@2:container@3:dhcp-relay@2:dhcp-server@11:dhcpv6-server@6:dns-dynamic@4:dns-forwarding@4:firewall@20:flow-accounting@3:https@7:ids@2:interfaces@34:ipoe-server@4:ipsec@14:isis@3:l2tp@9:lldp@3:mdns@1:monitoring@2:nat@8:nat66@3:nhrp@1:ntp@3:openconnect@3:openvpn@4:ospf@2:pim@1:policy@9:pppoe-server@11:pptp@5:qos@3:quagga@12:reverse-proxy@3:rip@1:rpki@2:salt@1:snmp@3:ssh@2:sstp@6:system@30:vpp@3:vrf@3:vrrp@4:vyos-accel-ppp@2:wanloadbalance@4:webproxy@2"
-// Release version: 2025.12.11-0021-rolling
+// vyos-config-version: "bgp@6:broadcast-relay@1:cluster@2:config-management@1:conntrack@6:conntrack-sync@2:container@3:dhcp-relay@2:dhcp-server@11:dhcpv6-server@6:dns-dynamic@4:dns-forwarding@4:firewall@20:flow-accounting@3:https@7:ids@2:interfaces@34:ipoe-server@4:ipsec@14:isis@3:l2tp@9:lldp@3:mdns@1:monitoring@2:nat@8:nat66@3:nhrp@1:ntp@3:openconnect@3:openvpn@5:ospf@2:pim@1:policy@8:pppoe-server@12:pptp@5:qos@2:quagga@12:reverse-proxy@3:rip@1:rpki@2:salt@1:snmp@3:ssh@3:sstp@6:system@31:vpp@6:vrf@4:vrrp@4:vyos-accel-ppp@2:wanloadbalance@4:webproxy@2"
+// Release version: 2026.03
