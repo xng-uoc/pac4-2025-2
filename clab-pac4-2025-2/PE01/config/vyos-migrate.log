@@ -1,9 +1,2 @@
 List of applied migration modules:
-applying /opt/vyatta/etc/config-migrate/migrate/openvpn/4-to-5
-applying /opt/vyatta/etc/config-migrate/migrate/pppoe-server/11-to-12
-applying /opt/vyatta/etc/config-migrate/migrate/ssh/2-to-3
-applying /opt/vyatta/etc/config-migrate/migrate/system/30-to-31
-applying /opt/vyatta/etc/config-migrate/migrate/vpp/3-to-4
-applying /opt/vyatta/etc/config-migrate/migrate/vpp/4-to-5
-applying /opt/vyatta/etc/config-migrate/migrate/vpp/5-to-6
-applying /opt/vyatta/etc/config-migrate/migrate/vrf/3-to-4
+applying /opt/vyatta/etc/config-migrate/migrate/qos/2-to-3
